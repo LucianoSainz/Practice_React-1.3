@@ -23,21 +23,23 @@ const notes = [
 ]
 
 const App = (props) => {
-  const { notes } = props
 
   return (
     <div>
-      <h1>Notes</h1>
-      <ul>
-        <li>{notes[0].content}</li>
-        <li>{notes[1].content}</li>
-        <li>{notes[2].content}</li>
-      </ul>
+      {
+        notes.map((note) => {
+          return(
+            <div>
+              <p>
+              {note.content}
+              <time>{note.date}</time>
+            </p>
+            </div>
+          )
+        })
+      }
     </div>
   )
 }
 
-ReactDOM.render(
-  <App notes={notes} />,
-  document.getElementById('root')
-)
+export default App;
