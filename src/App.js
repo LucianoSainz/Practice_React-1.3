@@ -22,20 +22,24 @@ const notes = [
   }
 ]
 
-const App = (props) => {
+const Note = ({id, content, date}) => {
+  return (
+      <div>
+      <p>
+      {content}
+      <time>{date}</time>
+     </p>
+     </div>
+        )
+}
 
+const App = (props) => {
   return (
     <div>
       {
-        notes.map((note) =>(
-            <div key={note.id}>
-              <p>
-              {note.content}
-              <time>{note.date}</time>
-            </p>
-            </div>
-        ))}
-      
+        notes.map((note) => (
+        <Note key={note.id} {...note}/>
+         ))} 
     </div>
   )
 }
