@@ -27,17 +27,15 @@ const App = (props) => {
   return (
     <div>
       {
-        notes.map((note) => {
-          return(
-            <div>
+        notes.map((note) =>(
+            <div key={id}>
               <p>
               {note.content}
               <time>{note.date}</time>
             </p>
             </div>
-          )
-        })
-      }
+        ))}
+      
     </div>
   )
 }
